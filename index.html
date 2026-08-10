@@ -2,16 +2,52 @@
 
 <html>
 
-    <body style = "background-color: beige; font-family:'Courier New', Courier, monospace">
+    <head>
+        
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
 
-        <h1 style = "margin: 4px">WELCOME TO THE MATRIX.</h1>
-        <p>... I mean, er. This website. Of a duck. Not the Matrix.</p>
-        <br>
-        <img style = "width: 336px; height: 224px; object-fit: cover; border-radius: 8px;" src = "duck-image.jpg">
-        <br><br>
-        <a href = "https://en.wikipedia.org/wiki/Human_impact_on_the_environment">link to a wikipedia article</a>
-        <br>
-        <p><abbr title = "a duck website operating system">duckOS</abbr> made by one of <s>compos mentis</s> <dfn>compos mantis</dfn></p>
+    </head>
+
+    <body style = "background-image: url(./matrix-background.jpg);
+    font-family:'Courier New', Courier, monospace;">
+
+
+        <div class = "heading">
+            <p>
+                duck
+            </p>
+            <p>
+                another duck
+            </p>
+            <p>
+                and another duck
+            </p>
+        </div>
+
+
+        <div class = "welcome" id="welcome">
+
+            <div class = "welcomeheader" id = "welcomeheader"></div>
+
+            <h1 style = "margin: 4px"; >WELCOME TO THE MATRIX.</h1>
+            <p>... I mean, er. This website. Of a duck. Not the Matrix.</p>
+            <a href = "https://en.wikipedia.org/wiki/Human_impact_on_the_environment">
+                <img style = "width: 224px; object-fit: cover; border-radius: 8px;" src = "./duck-image.jpg">
+            </a>
+            <p><abbr title = "a duck website operating system">duckOS</abbr> 
+                <br>
+                made by one of <s>compos mentis</s> 
+            <dfn>compos mantis</dfn>
+            </p>
+
+            <p class = "closebutton" id = "welcomeclose">[close]</p>
+
+        </div>
+           
+        <div class = "welcomeopen_time" id = "welcomeopen">
+            <p id = "timeElement">launching welcome page...</p>
+        </div>
 
     </body>
 

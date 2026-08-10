@@ -1,0 +1,53 @@
+.heading {
+    display: flex;
+    width: 1920px;
+    justify-content: space-evenly;
+    background-color: lightgreen;
+    border: solid;
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.welcome {
+    border: solid; 
+    border-radius: 10px;
+    background-color: beige;
+    width: 448px; 
+    height: 336px;
+    padding: 16px; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.welcomeheader {
+    width: 448px;
+    height: 10px;
+    background-color: darkgreen;
+}
+
+.closebutton {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: x-small;
+    cursor: pointer; 
+    display: flex; 
+    justify-content: right;
+}
+
+.welcomeopen_time {
+    cursor: pointer; background-color: darkolivegreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 260px;
+    height: 20px;
+    padding: 4px;
+    position: fixed;
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%, -100%);
+    border-radius: 10px;
+}
