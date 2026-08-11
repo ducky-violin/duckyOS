@@ -38,7 +38,8 @@
 }
 
 .welcomeopen_time {
-    cursor: pointer; background-color: darkolivegreen;
+    cursor: pointer; 
+    background-color: darkolivegreen;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,4 +51,20 @@
     left: 100%;
     transform: translate(-100%, -100%);
     border-radius: 10px;
+}
+
+.default {
+    border: solid; 
+    border-radius: 10px;
+    background-color: beige;
+    width: 448px; 
+    height: 336px;
+    padding: 16px; 
+    position: absolute;
+}
+
+.header {
+    width: 448px;
+    height: 10px;
+    background-color: darkgreen;
 }

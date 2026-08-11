@@ -11,6 +11,9 @@ setInterval(updateTime, 1000)
 
 // Make the DIV element draggable:
 dragElement(document.getElementById("welcome"));
+dragElement(document.getElementById("duck1"));
+dragElement(document.getElementById("duck2"));
+dragElement(document.getElementById("duck3"));
 
 // Step 1: Define a function called `dragElement` that makes an HTML element draggable.
 function dragElement(element) {
@@ -67,6 +70,15 @@ function dragElement(element) {
 var welcomeScreen = document.querySelector("#welcome")
 var welcomeClose = document.querySelector("#welcomeclose")
 var welcomeOpen = document.querySelector("#welcomeopen")
+var duck1 = document.querySelector("#duck1")
+var duck2 = document.querySelector("#duck2")
+var duck3 = document.querySelector("#duck3")
+//var duck1close = document.querySelector("#duck1close")
+//var duck2close = document.querySelector("#duck2close")
+//var duck3close = document.querySelector("#duck3close")
+var duck1open = document.querySelector("#duck1open")
+var duck2open = document.querySelector("#duck2open")
+var duck3open = document.querySelector("#duck3open")
 
 function closeWindow(element) {
     element.style.display = "none"
@@ -82,4 +94,28 @@ welcomeClose.addEventListener("click", function() {
 
 welcomeOpen.addEventListener("click", function() {
   openWindow(welcomeScreen);
+});
+
+duck1.addEventListener("click", function() {
+  closeWindow(duck1);
+});
+
+duck1open.addEventListener("click", function() {
+  openWindow(duck1);
+});
+
+duck2.addEventListener("click", function() {
+  closeWindow(duck2);
+});
+
+duck2open.addEventListener("click", function() {
+  openWindow(duck2);
+});
+
+duck3.addEventListener("click", function() {
+  closeWindow(duck3);
+});
+
+duck3open.addEventListener("click", function() {
+  openWindow(duck3);
 });
