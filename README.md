@@ -1,5 +1,7 @@
 DuckyOS!
 
+Demo link: https://ducky-violin.github.io/duckyOS/
+
 Click clickable objects and see what you can find!
 
 
