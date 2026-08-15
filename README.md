@@ -1,22 +1,17 @@
 DuckyOS!
-
+<br><br>
+You have been taken to a secret duck base, and you must prove your worth in order to join the Secret Duck Society. Will you take on the challenge?
+<br><br>
 Demo link: https://ducky-violin.github.io/duckyOS/
+<br>
+<details>
+  <summary>Hints</summary>
+  
+  -Talk to the ducks!
 
-Click clickable objects and see what you can find!
+  -Look at the calculator; it's helpful for one of the puzzles!
 
+  -Hey, what's hiding behind that welcome menu... ?
 
-Hints:
-
--What does the "time" clock say when it's loading the page?
-
--Do you see any clickable headers?
-
-
-
-Answers:
-
--Click clock to open welcome page
-
--Click/drag ducks for them to hide (they're shy!)
-
--Click headers to summon ducks
+  -Stuck on how to get the welcome page back? Check the clock!
+</details>

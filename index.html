@@ -105,7 +105,7 @@
         top: 80%;
         left: 63%;
         ">
-            <img src = "duck-leaf.jpg" class = "apps" id = "leaf">
+            <img src = "duck-leaf.jpg" class = "apps" id = "leafsummon">
         </div>
 
         <div class = "calculator" id="calculator" style = "left: 15%; top: 50%;">
@@ -134,6 +134,54 @@
             <button onclick="puzzleGuess()" style = "cursor: pointer">Solve!</button>
             <p class = "closebutton" id = "puzzlehide">[close]</p>
         </div>
+
+        <div class = "notif" id = "leafmessage" style = "left: 70%; top: 65%; width: 300px; height: 170px;">
+            <p>Looks like you've collected two keys already. Why don't you take a break? Go outside and touch some grass, and bring me a leaf when you come back.</p>
+            <p style = "font-size: smaller">(Task: Step outside (in real life) and go breathe some fresh air! Come back to the duck when you're done.)</p>
+            <p class = "closebutton" id = "leafhide">[Okay!]</p>
+        </div>
+
+        <div class = "victory" id = "solvemessage">
+            <p>Congratulations; you've solved the escape room! The ducks have acknowledged you as a worthy member of the Secret Duck Society. Who knows — maybe you'll be chosen for more missions in the future!</p>
+                    <img style = "
+                    position: absolute;
+                    width: 224px; 
+                    object-fit: cover; 
+                    border-radius: 8px;
+                    top: 20%;
+                    left: -8%;
+                    transform: translate(50%, 50%);
+                    " src = "./duckgroup1.avif">
+
+                    <img style = "
+                    position: absolute;
+                    width: 224px; 
+                    object-fit: cover; 
+                    border-radius: 8px;
+                    top: 20%;
+                    left: 22%;
+                    transform: translate(50%, 50%);
+                    " src = "./duckgroup2.jpg">
+
+                    <img style = "
+                    position: absolute;
+                    width: 224px; 
+                    object-fit: cover; 
+                    border-radius: 8px;
+                    top: 20%;
+                    left: 52%;
+                    transform: translate(50%, 50%);
+                    " src = "./duckgroup3.webp">
+
+            <br><br><br><br><br><br><br><br>
+
+            <p id = "solvehide" style = "
+            font-size: small;
+            cursor: pointer; 
+            display: flex; 
+            justify-content: right;">[Yay, thank you!]</p>
+        </div>
+
     </body>
 
 </html>

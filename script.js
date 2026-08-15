@@ -84,6 +84,13 @@ var calculatoropen = document.querySelector("#calculatoropen")
 var happyducksummon = document.querySelector("#happyducksummon")
 var happyduckmessage = document.querySelector("#happyduck")
 var puzzle = document.querySelector("#puzzle")
+var solvemessage = document.querySelector("#solvemessage")
+var door = document.querySelector("#door")
+var puzzlesolve = 0;
+var happyduck = 0;
+var leafsolve = 0;
+var userstuck = 0;
+
 
 function closeWindow(element) {
     element.style.display = "none"
@@ -138,7 +145,6 @@ calculatoropen.addEventListener("click", function() {
   openWindow(calculator);
 });
 
-var happyduck = 0;
 happyducksummon.addEventListener("click", function() {
   if (happyduck == 0) {
     setTimeout(() => openWindow(happyduckmessage), 1000);
@@ -149,9 +155,9 @@ happyduckhide.addEventListener("click", function() {
   closeWindow(happyduckmessage);
 });
 
-var puzzlesolve = 0;
 puzzlesummon.addEventListener("click", function() {
   if (puzzlesolve == 0) {
+    selectApp(puzzlesummon)
     openWindow(puzzlemessage)
   }
   else {
@@ -159,13 +165,49 @@ puzzlesummon.addEventListener("click", function() {
   }
 });
 puzzlehide.addEventListener("click", function() {
+  deselectApp(puzzlesummon)
   closeWindow(puzzlemessage);
 });
 
-var userstuck = 0;
+leafsummon.addEventListener("click", function() {
+  if (happyduck == 1 & puzzlesolve == 1) {
+    if (leafsolve == 0) {
+      leafsolve = 1;
+      selectApp(leafsummon);
+      openWindow(leafmessage);
+    }
+    else if (leafsolve == 1) {
+      let touchgrass = confirm("Did you go touch grass?");
+      if (touchgrass) {
+        let bringleaf = confirm("Did you bring back a leaf for the duck?");
+        if (bringleaf) {
+          leafsolve = 2;
+          alert("The duck quacks a thanks and happily gives you a key! \nYou now have 3/3 keys. Look for the locked door!");
+        }
+        else {
+          alert("The duck wants you to touch grass and bring back a leaf.");
+        }
+      }
+      else {
+        alert("The duck wants you to touch grass and bring back a leaf.");
+      }
+    }
+    else {
+      alert("Thanks for the leaf! Head on over to the LOCKED DOOR. \n(I heard it's hidden behind a certain GREETINGS WINDOW...")
+    }
+  }
+  else {
+    alert("The duck hides behind a large leaf, watching you. You should probably talk to other ducks before approaching this extremely shy duck.")
+  }
+});
+leafhide.addEventListener("click", function() {
+  deselectApp(leafsummon)
+  closeWindow(leafmessage);
+});
+
 door.addEventListener("click", function() {
-  if (happyduck == 1 & puzzle == 1 & leaf == 1) {
-    //
+  if (happyduck == 1 & puzzlesolve == 1 & leafsolve == 2) {
+    openWindow(solvemessage);
   }
   else if (userstuck == 1 & happyduck == 0) {
     alert("Hint: To summon the Welcome Duck, check the time...");
@@ -174,6 +216,10 @@ door.addEventListener("click", function() {
     alert("This door is locked. Try asking the ducks for help!");
     userstuck = 1;
   }
+});
+
+solvehide.addEventListener("click", function() {
+  closeWindow(solvemessage);
 });
 
 function selectApp(element) {
@@ -204,11 +250,13 @@ function puzzleGuess() {
   const guess = document.getElementById("puzzleguess").value;
   if (guess == "1984") {
     alert("You got it right! \n(The duck applauds you and gives you a key. Yay!)")
-    closeWindow(puzzlemessage);
     puzzlesolve = 1;
+    closeWindow(puzzlemessage);
+    deselectApp(puzzlesummon);
   }
   else {
     alert("Wrong; try again!")
-    alert(guess);
+    deselectApp(puzzlesummon);
+    closeWindow(puzzlemessage);
   }
 }
