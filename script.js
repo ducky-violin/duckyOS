@@ -14,6 +14,7 @@ dragElement(document.getElementById("welcome"));
 dragElement(document.getElementById("duck1"));
 dragElement(document.getElementById("duck2"));
 dragElement(document.getElementById("duck3"));
+dragElement(document.getElementById("calculator"));
 
 // Step 1: Define a function called `dragElement` that makes an HTML element draggable.
 function dragElement(element) {
@@ -70,22 +71,29 @@ function dragElement(element) {
 var welcomeScreen = document.querySelector("#welcome")
 var welcomeClose = document.querySelector("#welcomeclose")
 var welcomeOpen = document.querySelector("#welcomeopen")
+var header = document.querySelector("#header")
 var duck1 = document.querySelector("#duck1")
 var duck2 = document.querySelector("#duck2")
 var duck3 = document.querySelector("#duck3")
-//var duck1close = document.querySelector("#duck1close")
-//var duck2close = document.querySelector("#duck2close")
-//var duck3close = document.querySelector("#duck3close")
 var duck1open = document.querySelector("#duck1open")
 var duck2open = document.querySelector("#duck2open")
 var duck3open = document.querySelector("#duck3open")
+var calculator = document.querySelector("#calculator")
+var calculatorclose = document.querySelector("#calculatorclose")
+var calculatoropen = document.querySelector("#calculatoropen")
+var happyducksummon = document.querySelector("#happyducksummon")
+var happyduckmessage = document.querySelector("#happyduck")
+var puzzle = document.querySelector("#puzzle")
 
 function closeWindow(element) {
     element.style.display = "none"
 }
 
 function openWindow(element) {
-    element.style.display = "block"
+    element.style.display = "block";
+    biggestIndex++;
+    element.style.zIndex = biggestIndex;
+    header.style.zIndex = biggestIndex + 1;
 }
 
 welcomeClose.addEventListener("click", function() {
@@ -119,3 +127,88 @@ duck3.addEventListener("click", function() {
 duck3open.addEventListener("click", function() {
   openWindow(duck3);
 });
+
+calculatorclose.addEventListener("click", function() {
+  deselectApp(calculatoropen)
+  closeWindow(calculator);
+});
+
+calculatoropen.addEventListener("click", function() {
+  selectApp(calculatoropen)
+  openWindow(calculator);
+});
+
+var happyduck = 0;
+happyducksummon.addEventListener("click", function() {
+  if (happyduck == 0) {
+    setTimeout(() => openWindow(happyduckmessage), 1000);
+    happyduck = 1;
+  }
+});
+happyduckhide.addEventListener("click", function() {
+  closeWindow(happyduckmessage);
+});
+
+var puzzlesolve = 0;
+puzzlesummon.addEventListener("click", function() {
+  if (puzzlesolve == 0) {
+    openWindow(puzzlemessage)
+  }
+  else {
+    alert("You have already solved this puzzle!")
+  }
+});
+puzzlehide.addEventListener("click", function() {
+  closeWindow(puzzlemessage);
+});
+
+var userstuck = 0;
+door.addEventListener("click", function() {
+  if (happyduck == 1 & puzzle == 1 & leaf == 1) {
+    //
+  }
+  else if (userstuck == 1 & happyduck == 0) {
+    alert("Hint: To summon the Welcome Duck, check the time...");
+  }
+  else {
+    alert("This door is locked. Try asking the ducks for help!");
+    userstuck = 1;
+  }
+});
+
+function selectApp(element) {
+  element.classList.add("selectedApp");
+  element.classList.remove("app");
+}
+
+function deselectApp(element) {
+  element.classList.remove("selectedApp");
+  element.classList.add("app");
+}
+
+var biggestIndex = 1;
+
+function windowTap(element) {
+  element.addEventListener("mousedown", () =>
+    liftWindow(element)
+  )
+}
+
+function liftWindow(element) {
+  biggestIndex++;
+  element.style.zIndex = biggestIndex;
+  header.style.zIndex = biggestIndex + 1;
+}
+
+function puzzleGuess() {
+  const guess = document.getElementById("puzzleguess").value;
+  if (guess == "1984") {
+    alert("You got it right! \n(The duck applauds you and gives you a key. Yay!)")
+    closeWindow(puzzlemessage);
+    puzzlesolve = 1;
+  }
+  else {
+    alert("Wrong; try again!")
+    alert(guess);
+  }
+}

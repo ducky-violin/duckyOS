@@ -12,6 +12,9 @@
     <body style = "background-image: url(./matrix-background.jpg);
     font-family:'Courier New', Courier, monospace;">
 
+        <div>
+            <img id = "door" src = "door.webp" style = "position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); cursor: pointer">
+        </div>
 
         <div class = "heading">
             <p id = "duck1open" style = "cursor: pointer">
@@ -64,8 +67,8 @@
 
             <h1 style = "margin: 4px"; >WELCOME TO THE MATRIX.</h1>
             <p>... I mean, er. This website. Of a duck. Not the Matrix.</p>
-            <a href = "https://en.wikipedia.org/wiki/Human_impact_on_the_environment">
-                <img style = "width: 224px; object-fit: cover; border-radius: 8px;" src = "./duck-image.jpg">
+            <a href = "https://en.wikipedia.org/wiki/Human_impact_on_the_environment" target = "_blank" rel="noopener noreferrer">
+                <img style = "width: 224px; object-fit: cover; border-radius: 8px;" src = "./duck-image.jpg" id = "happyducksummon">
             </a>
             <p><abbr title = "a duck website operating system">duckOS</abbr> 
                 <br>
@@ -81,6 +84,56 @@
             <p id = "timeElement">launching welcome page...</p>
         </div>
 
+        <div style = "
+        position: absolute;
+        top: 80%;
+        left: 51%;
+        ">
+            <img src = "duck-confused.jpg" class = "apps" id = "calculatoropen">
+        </div>
+
+        <div style = "
+        position: absolute;
+        top: 80%;
+        left: 57%;
+        ">
+            <img src = "duck-shakey.jpg" class = "apps" id = "puzzlesummon">
+        </div>
+    
+        <div style = "
+        position: absolute;
+        top: 80%;
+        left: 63%;
+        ">
+            <img src = "duck-leaf.jpg" class = "apps" id = "leaf">
+        </div>
+
+        <div class = "calculator" id="calculator" style = "left: 15%; top: 50%;">
+
+            <div class = "calculatorheader" id = "calculatorheader"></div>
+
+            <h1 style = "margin: 4px"; >CALCULATOR</h>
+            <p class = "calcText">
+                2 + 2 can equal 5. <br><br>
+                What book was that from again? <br><br>
+            </p>
+            <br><br>
+            <p style = "font-size: x-small;"><br><br>(Hint: It's a four-digit number)</p>
+            <p class = "closebutton" id = "calculatorclose">[close]</p>
+
+        </div>
+
+        <div class = "notif" id = "happyduck" style = "left: 59%; top: 55%; width: 200px; height: 120px;">
+            <p>This duck appreciates that you read the "Human Impact on the Environment" article. Quack! You receive a key.</p>
+            <p class = "closebutton" id = "happyduckhide">[close]</p>
+        </div>
+
+        <div class = "notif" id = "puzzlemessage" style = "left: 60%; top: 72%; width: 300px; height: 170px;">
+            <p>I've been trying to solve this puzzle for days, but I can't figure it out! I heard that a CALCULATOR holds the secret, but I don't know what that means! Can you help me? To solve the puzzle, enter a four-digit number.</p>
+            <input type="text" id="puzzleguess" placeholder="Enter your guess here...">
+            <button onclick="puzzleGuess()" style = "cursor: pointer">Solve!</button>
+            <p class = "closebutton" id = "puzzlehide">[close]</p>
+        </div>
     </body>
 
 </html>
