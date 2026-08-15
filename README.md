@@ -6,12 +6,8 @@ Demo link: https://ducky-violin.github.io/duckyOS/
 <br>
 <details>
   <summary>Hints</summary>
-  
   -Talk to the ducks!
-
   -Look at the calculator; it's helpful for one of the puzzles!
-
   -Hey, what's hiding behind that welcome menu... ?
-
   -Stuck on how to get the welcome page back? Check the clock!
 </details>
